@@ -31,23 +31,16 @@ table.
 
 ## Assignment
 
-Your assignment is to create a student profile for someone sitting at your
-table. By the end of this project, every student should have a profile for
+Your assignment is to create a student profile for someone in your group. By the end of this project, every student should have a profile for
 themselves that was created by someone else and every student should have
 created a profile for someone else. If you are sitting at a table of four, it
 might be easiest to pair up. If you are sitting at a table of three, it might be
-easiest to create the profile of the student clockwise to you. If you are
-sitting at a...well you get the picture.
+easiest to create the profile of the student clockwise to you.
 
-Now, you might be freaking out and wondering, "Am I making a webapp?!?!" Not
-today — we'll just be working with HTML and file structures. You don't need to
-know Rails, JavaScript, or even Ruby for this project. And your classmates and
-instructors are here to help!
-
-You'll have about three hours to complete the first section of this lab. Use
-that time to get to know your table, get familiar with git workflows, and
+You'll have about two hours to complete this lab. Use
+that time to get to know your group members, get familiar with git workflows, and
 re-familiarize yourself with HTML. If you feel stuck, ask any instructor for
-help. **Keep in mind everyone in your table will be pushing to the same repository.**  
+help. **Keep in mind everyone in your group will be pushing to the same repository.**  
 Think about using a workflow with your teammates that will
 minimize conflicts.
 
@@ -59,21 +52,13 @@ get started. They'll be using this content as the project evolves for their
 resume and other profiles online.
 
 * Name
-* Github Username
-* Blog URL (if they don't already have a blog it will be their-github-username.github.io)
-* Tagline
+* Short Bio
 * Profile Picture (something normal, a headshot, of a good reusable size that
   can be easily cropped)
 * Background Picture
-* Treehouse Account
-* CoderWall Account
-* CodeSchool Account
-* Favorite Websites
-* Previous Work Experience
-* Short Bio
-* Twitter URL
-* LinkedIn URL
-* Education
+* Previous Education and/or Work Experience
+* Their Favorite quote
+* Favorite cites, foods, and websites
 
 ## Structure
 
@@ -106,71 +91,83 @@ The only file you'll alter is `index.html`.
 
 While working on this project, you will need to add the following files:
 
-* Add three pictures to the `img/students` folder (they can be jpg or png files):
+* Add two pictures to the `img/students` folder (they can be jpg or png files):
   * A background picture
-  * A picture for the index page
-  * A picture for the profile page
+  * A picture both the index page and profile page
 * Add one HTML file to the `students/` folder. Use the `student_name.html` for
   reference. In fact, feel free to copy as much of the HTML from
-  `student_name.html` into the new file you've created (just don't rename /
-  override that file, as that will cause you some git headaches).
+  `student_name.html` into the new file you've created.
 
 ## Getting Started
 
-### Group Logistics
+### Group Instructions
 
 * Figure out who is going to write whose profile.
 
-  ![fork](http://ironboard-curriculum-content.s3.amazonaws.com/web-development/deploy-on-day-1/fork.png)
-
 * Have one person at your table [fork][] this repo.
-* Git [clone][] the forked repo to that person's machine. Ensure that your
+
+![fork](http://ironboard-curriculum-content.s3.amazonaws.com/web-development/deploy-on-day-1/fork.png)
+
+* Git [clone][] the forked repo to that person's machine.
+
+![clone](http://ironboard-curriculum-content.s3.amazonaws.com/web-development/deploy-on-day-1/clone.png)
+
+* Ensure that your
   `index.html` file has the same amount of `<li></li>` elements as you have
   persons on your team (the HTML sections in question are each surrounded by
   `<!-- Begin Student -->` and '<!-- End Student -->' comments). We have
   provided four by default, but you should either remove these or copy/paste to
   reflect the correct amount of people on your team. Assign individuals to
   specific `<li></li>` elements (order matters!).
-* Once the count is accurate, the person who forked the repo must git [add][],
-  [commit][], and [push][] to your remote master.
+
+* Once the `index.html` has the correct numbers of students as in your group, the person who forked the repo must git [add][],
+  [commit][], and [push][] to your remote master. You can do all these steps in the terminal.
+  * `git add .` will track all new or updated files since you first cloned down the repo.
+  * `git commit -m "git message here"` will save all your altered file and group them together as single change. However, you should actually write a descriptive message describing the change you made.
+  * `git push` will upload your change to GitHub.
+
 * Next, the person who forked the repo must add all team members as
   collaborators. Learn more about that [here][].
-* Following, this person should then send the link to their fork to everyone
-  sitting at their table.
 
-  ![clone](http://ironboard-curriculum-content.s3.amazonaws.com/web-development/deploy-on-day-1/clone.png)
+* Following, this person should then send the link to their **forked repo** to everyone in the group.
 
-* Everyone at the table should [clone][] the repo from this fork using this link. Do not clone directly from learn-co-curriculum.
+* Everyone at the table should [clone][] the the forked repo using this link. Do not clone directly from learn-co-curriculum.
+
+![clone](http://ironboard-curriculum-content.s3.amazonaws.com/web-development/deploy-on-day-1/clone.png)
 
 ### Individual Instructions
 
-Now that you have the repo, you'll want to get into it. Remember [cd][]? When
-you type `pwd` into your terminal and the last part of the text that gets
-returned is `deploy-on-day-1...` you're in the right place.
+Now that you have the repo, you'll want to get into it. Remember [cd][]? To check
+if you've done it correctly, type `pwd` into your terminal and if the last part of the text that gets
+returned is `immersive-mod1-deploy-on-day-1...` you're in the right place.
 **NOTE In all the hypothetical examples, we're writing a profile for Zoe Perez.**
 
 [cd]: http://linux.about.com/od/commands/a/Example-Uses-Of-The-Command-Cd.htm
 
-Take a look at `index.html` and `students/student_name.html` in the browser. You
-can do this many ways but one is by opening finder and right-clicking on
+Open the files `index.html` and `students/student_name.html` in the browser. You
+can do this many ways but one is by opening your project in Finder and right-clicking on
 index.html. Then click on "Open with" then the name of your favorite browser.
 
 #### Make a New Branch
 
 * From the root directory, [checkout a new branch][]. This new branch's name
   should be the name of the student whose profile you're going to create.  
-  * For instance, the branch would be titled `zoe-perez`.
+  * For instance, if you are making a profile for Zoe Perez, you should create
+  a new branch
+  ```sh
+  git checkout -b zoe-perez
+  ```
   * Note: The `master` branch of a project is NEVER a place to do any work.
     `master` is considered the build and you never break the build. So make sure
     you are not working or committing to the `master` branch.
 
 * If you haven't already, switch to the branch you created. To make sure you're
   where you need to be, type `git branch` in your terminal. It should return the
-  name of your assigned student emphazised with an asterisk and master. The
+  name of your assigned student emphasized with an asterisk and master. The
   asterisk indicates which branch you're on. It should not be `master`.
-  * For instance, typing `pwd` in the terminal would return:
+  * For instance, typing `git branch` in the terminal would return:
 
-```text
+```sh
   master
 * zoe-perez
 ```
@@ -183,15 +180,15 @@ index.html. Then click on "Open with" then the name of your favorite browser.
   name should be the name of the student you're creating the profile for. Use
   the file `student_name.html` to see an example of what a profile's HTML could
   look like.
-  * For instance, we would create a file `zoe_perez.html` in the main `students` folder.
+  * For instance, we would create a file `zoe_perez.html` in the `students` folder.
 
-* Still in this branch you created, add the three photos detailed above to the
+* Still in this branch you created, add the two photos detailed above to the
   `img/students` folder. The student you're writing the profile for may have to
   email you their desired pictures or send you links to them, etc.
   * For instance, we would add the pictures titled `zoe_perez_background.jpg`,
-    `zoe_perez_index.jpg`, and `zoe_perez_profile.jpg` to the `students` folder
+    and `zoe_perez_profile.jpg` to the `students` folder
     that is inside the `img` folder.
-  * File endings are case senstive. When adding an \<image\> tag, make sure that
+  * File endings are case sensitive. When adding an \<image\> tag, make sure that
     the image source is identical to the name of the image file.
 
 * Once you've completed the profile, open up `index.html`. Use the assigned
@@ -201,40 +198,44 @@ index.html. Then click on "Open with" then the name of your favorite browser.
 #### Stage and Commit Changes
 
 * Once you're happy with the profile you've created and the changes you've
-  made to the index page, type [git status][]. The file you've altered,
-  index.html, should appear in the "Tracked Files" section and the files
-  you've created should appear in the "Untracked Files" section.
+  made to the index page, type `git status`. The file you've altered,
+  index.html, should appear in the "Changes not staged for commit" section and the files
+  you've created should appear in the "Untracked files" section.
 
-* You'll want to [add][] then [commit][] these changes with a message.
 
-* If you type `git status`, you should see "nothing to commit, working
-  directory clean". If you type `git remote -v`, it should display something
-  like:
+* If you type `git remote -v`, it should display something like:
 
-|remote | URL                                                               |         |
-|-------|-------------------------------------------------------------------|---------|
-|origin |https://github.com/table-member's-github-name/deploy-on-day-1...git| (fetch) |
-|origin |https://github.com/table-member's-github-name/deploy-on-day-1...git| (push)  |
+```sh
+origin https://github.com/table-member-github-name/immersive-mod1-deploy-on-day-1...git (fetch)
+origin https://github.com/table-member-github-name/immersive-mod1-deploy-on-day-1...git (push)  
+```
+
+* You'll want to [add][] then [commit][] these changes with a message. Remember how to do that?
+
+```sh
+git add .
+git commit -m "updated index page and added zoe perez page"
+```
 
 [git status]: (http://git-scm.com/book/en/Git-Basics-Recording-Changes-to-the-Repository#Checking-the-Status-of-Your-Files)
 
 #### Push Up Your Branch
 
 * Now it's time to [push][] to a remote branch. This remote branch doesn't
-    exist yet, you're going to create it by pushing.
+    exist yet, you're going to create it by `git push`.
 
   * **NOTE: Do not push to master. Do not type anything that contains the word master!**
   * You're going to push to a branch that is the same name as your local branch.
-    * For instance, if we're on the branch zoe-perez, we're going to push to zoe-perez.
+    * For instance, if we're on the branch `zoe-perez`, we're going to push to `zoe-perez`.
 
 * To confirm this push worked you can do two things:
   * Type `git branch -a` which will show the remote branch on github.com you
     just created when you pushed.
   * You could also go to the URL of the forked repo. Notice the section that
     looks like
-  
+
   ![branches][]
-  
+
 You should be able to click on that arrow and to see a dropdown. From this
 dropdown, select the name of the branch you've been working on.
 
@@ -242,7 +243,7 @@ dropdown, select the name of the branch you've been working on.
 
 ## Next Steps
 
-### Additional Group Logistics
+### Additional Group Instructions
 
 Since your table is going to be deploying a single web page with all of your
 tables profiles, you'll need to merge every branch that your table created
@@ -250,15 +251,18 @@ into a single branch. This branch will contain every profile from your table.
 The process of merging these branches may result in merge conflicts in
 `index.html` and possibly elsewhere. That's totally okay and expected!
 
-Think about the best way to merge all the branches together. Should one person
-do it? Should everyone do it in order? Should you merge into a pre-existing
-branch, like `master`, or create a totally new branch? You might be wondering
-what the best answer is but there isn't a "best answer", just decide on a
-strategy and go for it!
+In order to merge the `zoe-perez` branch into `master`, we must first checkout master `git checkout master`. You should see a message that says `Switched to branch 'master'`. In addition, you can run the command `git branch` and you should be an asterisk by the master.
+
+```sh
+* master
+  zoe-perez
+```
+
+Next, merge the code from `zoe-perez` into the master branch with `git merge zoe-perez`. Once you're ready, push the newly merged master branch up to Github. Run `git status` to see your changes, then `git add .` to stage those changes for a commit, `git commit -m "your message here"` to commit your changes, then finally `git push` to push those changes up to Github.
 
 ### Merge Conflicts
 
-When [merging][], [merge conflicts][] can happen. Generally they look like:
+When [merging][], a [merge conflict][] can happen. Generally they look like:
 
 ```text
 > git branch
@@ -270,7 +274,7 @@ When [merging][], [merge conflicts][] can happen. Generally they look like:
 ```
 
 This just means that you will have to open the files where there are merge
-conflicts, in this case, `index.html`, and find the part that looks like:
+conflicts, and find the part that looks like:
 
 ```text
 <<<<<<< HEAD
@@ -300,11 +304,12 @@ Once every profile is on a single branch that is hosted remotely, it's time to
 deploy your table's profile page!  This will look like the sample link at the
 top of this lesson, but with the cards/profiles for your group only.
 
-* In your browser, navigate to the main github repo for your table.  
+* In your browser, navigate to the forked github repo for your table.  
 * At the top of the page, click on the `Settings` tab (the one with the gear symbol)
 * Once on the Settings page, scroll down to the `GitHub Pages` section
 * Under "Source," choose "master branch" and click "Save."
 * Navigate to `http://username.github.io/repository_name`, and have a look at your page!
+* Slack this URL out to the rest of your class so you can learn about each other!
 
  When you have fixed any errors and are ready to share, post your link in Slack
  so the rest of the class can read who you are!
